@@ -18,7 +18,7 @@
                 {{ $message }}
             </div>
         @endif
-        <form action="{{url('data-list-store')}}" method="POST">
+        <form action="{{url('data-list-store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="" class="form-label">Full Name</label>
@@ -31,6 +31,10 @@
             <div class="mb-3">
                 <label for="" class="form-label">Phone</label>
                 <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload Document</label>
+                <input type="file" name="file" id="file" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>

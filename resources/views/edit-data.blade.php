@@ -18,7 +18,7 @@
                 {{ $message }}
             </div>
         @endif
-        <form action="{{url('data-list-store')}}/{{$data_lists->id}}/update" method="POST">
+        <form action="{{url('data-list-store')}}/{{$data_lists->id}}/update" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -36,6 +36,10 @@
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
                 <textarea class="form-control" name="message" id="message" cols="30" rows="3" placeholder="Enter Message" value="{{old('message',$data_lists->message)}}"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Document</label>
+                <input type="file" class="form-control" name="file" value="{{old('file',$data_lists->file)}}">
             </div>
             <div class="mb-3">
                 <button class="btn btn-outline-primary" type="submit">Submit</button>
